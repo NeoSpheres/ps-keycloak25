@@ -559,6 +559,7 @@ public class SAMLEndpoint {
 
                 //SAML Spec 2.2.2 Format is optional
                 if (subjectNameID != null && subjectNameID.getFormat() != null && subjectNameID.getFormat().toString().equals(JBossSAMLURIConstants.NAMEID_FORMAT_EMAIL.get())) {
+                    subjectNameID.setValue(subjectNameID.getValue().toLowerCase());
                     identity.setEmail(subjectNameID.getValue());
                 }
 
